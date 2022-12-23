@@ -53,7 +53,7 @@ function loadImages() {
                         </div>
                         </div>
                         <div class="overlay-right">
-                        <a href="`+ iterator.urls.small_s3 + `"  download="`+iterator.user.first_name+`"  class="btn-default" title="Download photo"><i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <a href="`+ iterator.urls.small_s3 + `"  download="`+iterator.user.first_name+`" id="downloadPhoto`+ iterator.id + `"  class="btn-default" title="Download photo"><i class="fa fa-arrow-down" aria-hidden="true"></i>
                         </a>
                         </div>
                         </div>
@@ -66,6 +66,9 @@ function loadImages() {
                         })
                         $('#addCollection'+iterator.id).click(function(e){
                             openModal(3,iterator.id)
+                            e.stopPropagation()
+                        })
+                        $('#downloadPhoto'+iterator.id).click(function(e){
                             e.stopPropagation()
                         })
                 }
